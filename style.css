@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Acme", serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./img/bg-fundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin: 50px 10px;
+}
+
+.img-boy-fight  {
+    height: 450px;
+    animation: balanco-boy 5s linear infinite;
+}
+
+.img-robo-fight {
+    height: 450px;
+    animation: balanco-machine 5s linear infinite;
+}
+
+@keyframes balanco-boy {
+    0% {
+        transform: rotate(0deg);
+        /* transform: rotateY(360deg); --> gira a imagem */
+    }
+
+    20% {
+        transform: rotate(5deg);
+        
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+
+    }
+
+    60% {
+        transform: rotate(-5deg);
+
+    }
+
+    70% {
+        transform: rotate(-10deg);
+
+    }
+    
+    100% {
+        transform: rotate(0deg);
+
+    }
+}
+
+@keyframes balanco-machine {
+    0% {
+        transform: rotate(0deg);
+        /* transform: rotateY(360deg); --> gira a imagem */
+    }
+
+    20% {
+        transform: rotate(4deg);
+        
+    }
+
+    30% {
+        transform: rotate(6deg);
+    }
+
+    40% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+
+    }
+
+    60% {
+        transform: rotate(8deg);
+
+    }
+
+    70% {
+        transform: rotate(4deg);
+
+    }
+    
+    100% {
+        transform: rotate(0deg);
+
+    }
+}
+
+.box-center {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 48px;
+    color:  rgba(254, 246, 5, 0.938);
+    text-shadow: 2px 2px 10px #470202;
+    opacity: 1;
+    transition: 500ms;
+}
+
+h2 {
+    font-size: 78px;
+    color:  rgba(3, 3, 132, 0.7);
+    text-shadow: 2px 2px 10px #ffffff;
+    opacity: 0;
+    position: relative;
+    top: -115px;
+    transition: 500ms;
+}
+
+.box-center-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: -30px;
+    width: 90%;
+    height: 380px;
+    background-color: rgba(3, 3, 132, 0.7);
+    border-radius: 10px;
+    border: 3px solid rgba(228, 228, 237, 0.5);
+
+}
+
+button {
+    padding: 10px;
+    font-size: 55px; /* como são caracteres ele aumenta com o font-size */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    transition: opacity 0.5s ease-in-out;
+    
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#rock {
+    background-color: #8902d7;
+}
+
+#paper {
+    background-color: #0779cb;
+}
+
+#scissors {
+    background-color: #9ee01a;
+}
+
+.restart {
+    height: 50px;
+    width: 150px;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    border-radius: 30px;
+    color: rgba(215, 3, 3, 0.7);
+    background-color: rgba(254, 246, 5, 0.938);
+}
+
+.mask-display{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(255, 255, 255, 0.99) 15%, rgba(215, 3, 3, 0.7) 40%, rgba(2, 0, 23, 0.99) 85%);
+    z-index: -1; 
+    opacity: 0.9;
+}
+
+.human-score{
+    font-size: 30px;
+    color: #0779cb;
+    text-shadow: 2px 2px 5px#f4ebeb;
+    margin: 10px;
+}
+
+.machine-score{
+    font-size: 30px;
+    color: #9ee01a;
+    text-shadow: 2px 2px 5px#470202;
+    margin: 10px;
+}
+
+.result{
+    font-size: 35px;
+    color: #f8f9f5;
+    text-shadow: 2px 2px 5px#000000;
+    margin: 40px 15px;
+}

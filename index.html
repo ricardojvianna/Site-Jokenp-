@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/joystick.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Projeto Jokenpô</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img class="img-boy-fight" src="./img/karate-Fight.png" alt="boy-fight">
+            <p class="human-score">Pontuação Humano: <span id="human-score">0</span></p>
+        </div>
+
+        <div class="box-center">
+            <h1>A disputa vai começar... </h1>
+            <h2>Jokenpô!</h2>
+            <div class="box-center-play">
+                <div>
+                    <button onclick="playHuman('rock')" id="rock">&#x1F44A;</button>
+                    <button onclick="playHuman('paper')" id="paper">&#x1f590;</button>
+                    <button onclick="playHuman('scissors')" id="scissors">&#x270c;</button>
+                    <audio class="song-play" src="./song/collect-points-190037.mp3"></audio>
+                </div>
+                <p class="result">Resultado: <span></span></p>
+                <button onclick="restartScore()" class="restart">Reiniciar</button>
+                <audio class="song-restart" src="./song/winner-bell-game-show-91932.mp3"></audio>
+            </div>
+        </div>
+
+        <div>
+            <img class="img-robo-fight" src="./img/Robô-Fight.png" alt="robo-fight">
+            <p class="machine-score">Pontuação Android: <span id="machine-score">0</span></p>
+        </div>
+        <div class="mask-display">
+
+        </div>
+    </div>
+
+</body>
+
+<script src="./scripts.js"
+script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</html>
