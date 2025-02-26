@@ -38,7 +38,7 @@ const playHuman = (humanChoice) => {
 const restartScore = () => {
     const songRestart = document.querySelector(".song-restart")
     songRestart.play()
-    
+
     humanScoreNumber = 0
     machineScoreNumber = 0
 
@@ -59,10 +59,28 @@ Então, mesmo zerando dentro da função, isso não afetava os valores globais.
 
 }
 
+/*
+
+ENUM:
+--> é uma palavra que pode referir-se a um tipo de dado em programação
+ que será uma variável fixa do tipo global. 
+ --> quando precisa trocar o valor de uma variável, é só mudar dentro do ENUM, 
+ que já vai alterar pro código todo que estiver usando aquele ENUM.
+
+Ex: --> humanScoreNumber, é uma variável do tipo: Camel Case.
+    |--> GAME_OPTIONS, é uma variável do tipo: Snake Case.
+
+*/
+
+const GAME_OPTIONS = {
+    ROCK: "rock",                   //ENUMS
+    PAPER: "paper",
+    SCISSORS: "scissors"   
+}
 
 // parte do sorteio com Math.random, escolha da máquina
 const playMachine = () => {
-    const choices = ['rock', 'paper', 'scissors']
+    const choices = [GAME_OPTIONS.ROCK, GAME_OPTIONS.PAPER, GAME_OPTIONS.SCISSORS]
     const randomNumber = Math.floor(Math.random() * 3)
     // ele gera um número aleatório entra 0 e 1, ex:
     // 0.9 * 3 == 2.7 arredonda pra baixo == 2
@@ -91,9 +109,9 @@ const decisionTheGame = (human, machine) => {
     if (human === machine) { // deu empate
         resultGame.innerHTML = "Deu Empate!"
     } else if ( // humano ganha da máquina.
-        (human === 'paper' && machine === 'rock') ||
-        (human === 'rock' && machine === 'scissors') ||
-        (human === 'scissors' && machine === 'paper')
+        (human === GAME_OPTIONS.PAPER && machine === GAME_OPTIONS.ROCK) ||
+        (human === GAME_OPTIONS.ROCK && machine === GAME_OPTIONS.SCISSORS) ||
+        (human === GAME_OPTIONS.SCISSORS && machine === GAME_OPTIONS.PAPER)
     ) {
         humanScoreNumber++
         humanScore.innerHTML = humanScoreNumber
